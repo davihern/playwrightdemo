@@ -1,0 +1,228 @@
+import { test, expect } from '@playwright/test';
+
+test.describe('Verify Movie', () => {
+
+test('verify movie details', async ({ page }, testInfo) => {
+  await page.goto('https://debs-obrien.github.io/playwright-movies-app?category=Popular&page=1');
+  await page.getByRole('link', { name: 'poster of Deadpool &' }).click();
+  await expect(page.locator('.jsx-2e0a36789c396f3c').first()).toBeVisible();
+  await expect(page.getByLabel('duration')).toContainText('128 min. /');
+
+  //await page.screenshot({ path: 'screenshot.png' });
+  const screenshot = await page.screenshot();
+  await testInfo.attach('screenshot', { body: screenshot, contentType: 'image/png' });
+
+  await expect(page.getByTestId('movie-summary')).toMatchAriaSnapshot(`
+    - heading "Deadpool & Wolverine" [level=1]
+    - heading "Come together." [level=2]
+    - text: ★ ★ ★ ★ ★ ★
+    - paragraph: "7.7"
+    - text: /English \\/ \\d+ min\\. \\/ \\d+/
+    - heading "The Genres" [level=3]
+    - list "genres":
+      - listitem:
+        - link "Action":
+          - /url: /playwright-movies-app/genre?id=28&name=Action&page=1
+          - img
+      - listitem:
+        - link "Comedy":
+          - /url: /playwright-movies-app/genre?id=35&name=Comedy&page=1
+          - img
+      - listitem:
+        - link "Science Fiction":
+          - /url: /playwright-movies-app/genre?id=878&name=Science+Fiction&page=1
+          - img
+    - heading "The Synopsis" [level=3]
+    - paragraph: A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.
+    - heading "The Cast" [level=3]
+    - button "Previous" [disabled]
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+      - img "Ryan Reynolds"
+    - link "Hugh Jackman":
+      - /url: /playwright-movies-app/person?id=6968&page=1
+      - img "Hugh Jackman"
+    - link "Emma Corrin":
+      - /url: /playwright-movies-app/person?id=2324569&page=1
+      - img "Emma Corrin"
+    - link "Matthew Macfadyen":
+      - /url: /playwright-movies-app/person?id=15576&page=1
+      - img "Matthew Macfadyen"
+    - link "Dafne Keen":
+      - /url: /playwright-movies-app/person?id=1464650&page=1
+      - img "Dafne Keen"
+    - link "Jon Favreau":
+      - /url: /playwright-movies-app/person?id=15277&page=1
+      - img "Jon Favreau"
+    - link "Morena Baccarin":
+      - /url: /playwright-movies-app/person?id=54882&page=1
+      - img "Morena Baccarin"
+    - link "Rob Delaney":
+      - /url: /playwright-movies-app/person?id=1091324&page=1
+      - img "Rob Delaney"
+    - link "Leslie Uggams":
+      - /url: /playwright-movies-app/person?id=122750&page=1
+      - img "Leslie Uggams"
+    - link "Jennifer Garner":
+      - /url: /playwright-movies-app/person?id=9278&page=1
+      - img "Jennifer Garner"
+    - link "Wesley Snipes":
+      - /url: /playwright-movies-app/person?id=10814&page=1
+      - img "Wesley Snipes"
+    - link "Channing Tatum":
+      - /url: /playwright-movies-app/person?id=38673&page=1
+      - img "Channing Tatum"
+    - link "Chris Evans":
+      - /url: /playwright-movies-app/person?id=16828&page=1
+      - img "Chris Evans"
+    - link "Henry Cavill":
+      - /url: /playwright-movies-app/person?id=73968&page=1
+      - img "Henry Cavill"
+    - link "Wunmi Mosaku":
+      - /url: /playwright-movies-app/person?id=134774&page=1
+      - img "Wunmi Mosaku"
+    - link "Aaron Stanford":
+      - /url: /playwright-movies-app/person?id=11022&page=1
+      - img "Aaron Stanford"
+    - link "Tyler Mane":
+      - /url: /playwright-movies-app/person?id=9832&page=1
+      - img "Tyler Mane"
+    - link "Karan Soni":
+      - /url: /playwright-movies-app/person?id=1109702&page=1
+      - img "Karan Soni"
+    - link "Brianna Hildebrand":
+      - /url: /playwright-movies-app/person?id=1492326&page=1
+      - img "Brianna Hildebrand"
+    - link "Shioli Kutsuna":
+      - /url: /playwright-movies-app/person?id=230660&page=1
+      - img "Shioli Kutsuna"
+    - link "Stefan Kapičić":
+      - /url: /playwright-movies-app/person?id=80507&page=1
+      - img "Stefan Kapičić"
+    - link "Randal Reeder":
+      - /url: /playwright-movies-app/person?id=215887&page=1
+      - img "Randal Reeder"
+    - link "Lewis Tan":
+      - /url: /playwright-movies-app/person?id=1610940&page=1
+      - img "Lewis Tan"
+    - link "Nick Pauley":
+      - /url: /playwright-movies-app/person?id=4561764&page=1
+      - img "Nick Pauley"
+    - link "Sonita Henry":
+      - /url: /playwright-movies-app/person?id=963257&page=1
+      - img "Sonita Henry"
+    - link "Ryan McKen":
+      - /url: /playwright-movies-app/person?id=1850835&page=1
+      - img "Ryan McKen"
+    - link "Nanak Phlora":
+      - /url: /playwright-movies-app/person?id=4848497&page=1
+      - img "Nanak Phlora"
+    - link "Aydin Ahmed":
+      - /url: /playwright-movies-app/person?id=4848499&page=1
+      - img "Aydin Ahmed"
+    - link "Leemore Marrett Jr.":
+      - /url: /playwright-movies-app/person?id=1649401&page=1
+      - img "Leemore Marrett Jr."
+    - link "James Dryden":
+      - /url: /playwright-movies-app/person?id=1587576&page=1
+      - img "James Dryden"
+    - link "Ollie Palmer":
+      - /url: /playwright-movies-app/person?id=4698632&page=1
+      - img "Ollie Palmer"
+    - link "Greg Hemphill":
+      - /url: /playwright-movies-app/person?id=167008&page=1
+      - img "Greg Hemphill"
+    - link "Aaron W Reed":
+      - /url: /playwright-movies-app/person?id=3158217&page=1
+      - img "Aaron W Reed"
+    - link "Mike Waters":
+      - /url: /playwright-movies-app/person?id=4854075&page=1
+      - img "Mike Waters"
+    - link "Rob McElhenney":
+      - /url: /playwright-movies-app/person?id=78597&page=1
+      - img "Rob McElhenney"
+    - link "James Reynolds":
+      - /url: /playwright-movies-app/person?id=4854086&page=1
+      - img "James Reynolds"
+    - link "Ed Kear":
+      - /url: /playwright-movies-app/person?id=1364950&page=1
+      - img "Ed Kear"
+    - link "Paul G. Raymond":
+      - /url: /playwright-movies-app/person?id=1951011&page=1
+      - img "Paul G. Raymond"
+    - link "Blake Lively":
+      - /url: /playwright-movies-app/person?id=59175&page=1
+      - img "Blake Lively"
+    - link "Inez Reynolds":
+      - /url: /playwright-movies-app/person?id=4846410&page=1
+      - img "Inez Reynolds"
+    - link "Nathan Fillion":
+      - /url: /playwright-movies-app/person?id=51797&page=1
+      - img "Nathan Fillion"
+    - link "Matthew McConaughey":
+      - /url: /playwright-movies-app/person?id=10297&page=1
+      - img "Matthew McConaughey"
+    - link "OIin Reynolds":
+      - /url: /playwright-movies-app/person?id=4850040&page=1
+      - img "OIin Reynolds"
+    - link "Paul Mullin":
+      - /url: /playwright-movies-app/person?id=4338091&page=1
+      - img "Paul Mullin"
+    - link "Alex Kyshkovych":
+      - /url: /playwright-movies-app/person?id=2280082&page=1
+      - img "Alex Kyshkovych"
+    - link "Billy Clements":
+      - /url: /playwright-movies-app/person?id=2423284&page=1
+      - img "Billy Clements"
+    - link "Daniel Medina Ramos":
+      - /url: /playwright-movies-app/person?id=4857614&page=1
+      - img "Daniel Medina Ramos"
+    - link "Jade Lye":
+      - /url: /playwright-movies-app/person?id=4115448&page=1
+      - img "Jade Lye"
+    - link "Nilly Cetin":
+      - /url: /playwright-movies-app/person?id=4858600&page=1
+      - img "Nilly Cetin"
+    - link "Eduardo Gago Muñoz":
+      - /url: /playwright-movies-app/person?id=2423287&page=1
+      - img "Eduardo Gago Muñoz"
+    - link "Chloe Kibble":
+      - /url: /playwright-movies-app/person?id=4858628&page=1
+      - img "Chloe Kibble"
+    - link "Curtis Rowland Small":
+      - /url: /playwright-movies-app/person?id=2151833&page=1
+      - img "Curtis Rowland Small"
+    - link "Ayesha Hussain":
+      - /url: /playwright-movies-app/person?id=4733517&page=1
+      - img "Ayesha Hussain"
+    - link "Jessica Walker":
+      - /url: /playwright-movies-app/person?id=4858668&page=1
+      - img "Jessica Walker"
+    - link "Harry Holland":
+      - /url: /playwright-movies-app/person?id=1674196&page=1
+      - img "Harry Holland"
+    - link "Kevin Fortin":
+      - /url: /playwright-movies-app/person?id=3411282&page=1
+      - img "Kevin Fortin"
+    - link "Luke Bennett":
+      - /url: /playwright-movies-app/person?id=4045462&page=1
+      - img "Luke Bennett"
+    - button "Next"
+    - link "Website":
+      - /url: https://www.marvel.com/movies/deadpool-and-wolverine
+      - button "Website":
+        - img
+    - link "IMDB":
+      - /url: https://www.imdb.com/title/tt6263850
+      - button "IMDB":
+        - img
+    - button "Trailer":
+      - img
+    - button "Back":
+      - img
+    `);
+
+
+  });
+
+  });
