@@ -1,0 +1,1 @@
+create a playwright spec.ts file with all the actions executed previously

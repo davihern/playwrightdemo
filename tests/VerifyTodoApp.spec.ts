@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Verify Todo WebApp', () => {
-
   test('verify todo app functionality', async ({ page }) => {
     await page.goto('https://demo.playwright.dev/todomvc/#/');
     await page.locator('html').click();
@@ -13,4 +11,3 @@ test.describe('Verify Todo WebApp', () => {
     await expect(page.getByTestId('todo-title')).toBeVisible();
   });
   
-});

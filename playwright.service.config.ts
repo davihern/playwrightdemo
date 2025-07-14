@@ -17,6 +17,6 @@ export default defineConfig(
     This will override any reporter options specified in the base playwright config.
     If you are using more reporters, please update your configuration accordingly.
     */
-    reporter: [['list'], ['@azure/microsoft-playwright-testing/reporter']],
+    reporter: [['list'], ['@azure/microsoft-playwright-testing/reporter'],['json', { outputFile: 'results.json' }]],
   }
 );
