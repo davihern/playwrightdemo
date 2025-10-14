@@ -6,7 +6,6 @@
 
 import { test, expect } from '@playwright/test';
 import * as fs from 'fs';
-import * as path from 'path';
 
 test.describe('TOPRATEDMOVIES__RANDOMSELECTION__DURATIONLOGGED', () => {
 
@@ -24,10 +23,10 @@ test.describe('TOPRATEDMOVIES__RANDOMSELECTION__DURATIONLOGGED', () => {
     
     // Esperar a que la página de Top Rated cargue
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000); // Pequeña espera adicional para asegurar que se carguen las películas
     
     // Obtener todas las películas (enlaces con imágenes poster)
     const movieLinks = page.locator('a[href*="/movie?id="]');
+    await expect(movieLinks.first()).toBeVisible(); // Esperar a que al menos una película sea visible
     const movieCount = await movieLinks.count();
     
     console.log(`Total de películas encontradas: ${movieCount}`);
@@ -41,7 +40,7 @@ test.describe('TOPRATEDMOVIES__RANDOMSELECTION__DURATIONLOGGED', () => {
     
     // Esperar a que los detalles de la película se carguen
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
+    await expect(page.locator('h1').first()).toBeVisible(); // Esperar a que el título de la película sea visible
     
     // Obtener el título de la película
     const movieTitle = await page.locator('h1').first().textContent();
@@ -57,14 +56,13 @@ test.describe('TOPRATEDMOVIES__RANDOMSELECTION__DURATIONLOGGED', () => {
     // Crear el contenido para el archivo de texto
     const logContent = `Película: ${movieTitle}\nDuración: ${durationText}\nFecha: ${new Date().toISOString()}\n`;
     
-    // Guardar la información en un archivo de texto
-    const logFilePath = path.join(process.cwd(), 'movie-duration.txt');
+    // Guardar la información en un archivo de texto usando el directorio de salida de Playwright
+    const logFilePath = testInfo.outputPath('movie-duration.txt');
     fs.writeFileSync(logFilePath, logContent, 'utf-8');
     console.log(`Información guardada en: ${logFilePath}`);
     
-    // Adjuntar el archivo de texto al reporte de test
-    const logFileContent = fs.readFileSync(logFilePath, 'utf-8');
-    await testInfo.attach('movie-duration.txt', { body: logFileContent, contentType: 'text/plain' });
+    // Adjuntar el contenido al reporte de test
+    await testInfo.attach('movie-duration.txt', { body: logContent, contentType: 'text/plain' });
     
     // Capturar una captura de pantalla
     const screenshot = await page.screenshot({ fullPage: true });
