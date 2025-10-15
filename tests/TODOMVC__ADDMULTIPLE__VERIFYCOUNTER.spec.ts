@@ -12,6 +12,9 @@
 
 import { test, expect } from '@playwright/test';
 
+// Constants
+const TODO_COUNT_SELECTOR = '.todo-count';
+
 test.describe('TodoMVC Multiple Items Counter Verification', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to TodoMVC before each test
@@ -48,8 +51,9 @@ test.describe('TodoMVC Multiple Items Counter Verification', () => {
     });
 
     // Verify the counter shows the correct number of items
-    const todoCount = page.locator('.todo-count');
-    await expect(todoCount).toContainText(`${todoItems.length} items left`);
+    const todoCount = page.locator(TODO_COUNT_SELECTOR);
+    const itemsText = todoItems.length === 1 ? 'item' : 'items';
+    await expect(todoCount).toContainText(`${todoItems.length} ${itemsText} left`);
 
     // Verify all items are present in the list
     const todoTitles = page.getByTestId('todo-title');
@@ -60,7 +64,9 @@ test.describe('TodoMVC Multiple Items Counter Verification', () => {
     await firstCheckbox.check();
 
     // Verify counter decreases
-    await expect(todoCount).toContainText(`${todoItems.length - 1} items left`);
+    const remainingItems = todoItems.length - 1;
+    const remainingItemsText = remainingItems === 1 ? 'item' : 'items';
+    await expect(todoCount).toContainText(`${remainingItems} ${remainingItemsText} left`);
 
     // Capture screenshot after marking one item as complete
     await page.screenshot({ 
@@ -99,7 +105,7 @@ test.describe('TodoMVC Multiple Items Counter Verification', () => {
     await expect(todoTitles).toHaveCount(0);
 
     // Verify counter is not displayed (no items)
-    const todoCount = page.locator('.todo-count');
+    const todoCount = page.locator(TODO_COUNT_SELECTOR);
     await expect(todoCount).not.toBeVisible();
 
     // Capture screenshot showing no items added
@@ -150,7 +156,7 @@ test.describe('TodoMVC Multiple Items Counter Verification', () => {
     await expect(todoTitles).toHaveCount(0);
 
     // Verify counter is not visible
-    const todoCount = page.locator('.todo-count');
+    const todoCount = page.locator(TODO_COUNT_SELECTOR);
     await expect(todoCount).not.toBeVisible();
 
     // Capture screenshot after clearing
