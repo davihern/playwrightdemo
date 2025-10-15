@@ -15,6 +15,11 @@ import { test, expect } from '@playwright/test';
 // Constants
 const TODO_COUNT_SELECTOR = '.todo-count';
 
+// Helper function to handle pluralization of "item"/"items"
+function getItemsText(count: number): string {
+  return count === 1 ? 'item' : 'items';
+}
+
 test.describe('TodoMVC Multiple Items Counter Verification', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to TodoMVC before each test
@@ -52,8 +57,7 @@ test.describe('TodoMVC Multiple Items Counter Verification', () => {
 
     // Verify the counter shows the correct number of items
     const todoCount = page.locator(TODO_COUNT_SELECTOR);
-    const itemsText = todoItems.length === 1 ? 'item' : 'items';
-    await expect(todoCount).toContainText(`${todoItems.length} ${itemsText} left`);
+    await expect(todoCount).toContainText(`${todoItems.length} ${getItemsText(todoItems.length)} left`);
 
     // Verify all items are present in the list
     const todoTitles = page.getByTestId('todo-title');
@@ -65,8 +69,7 @@ test.describe('TodoMVC Multiple Items Counter Verification', () => {
 
     // Verify counter decreases
     const remainingItems = todoItems.length - 1;
-    const remainingItemsText = remainingItems === 1 ? 'item' : 'items';
-    await expect(todoCount).toContainText(`${remainingItems} ${remainingItemsText} left`);
+    await expect(todoCount).toContainText(`${remainingItems} ${getItemsText(remainingItems)} left`);
 
     // Capture screenshot after marking one item as complete
     await page.screenshot({ 
