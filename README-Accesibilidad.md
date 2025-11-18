@@ -316,7 +316,7 @@ Este código es parte del proyecto Playwright Demo y está disponible para uso e
 ## Contacto y Soporte
 
 Para preguntas o soporte relacionado con DOTNET CONF 2025:
-- Email: soporte@dotnetconf.com
+- Email (ejemplo): soporte@dotnetconf.com
 - Twitter: @dotnetconf
 - GitHub Issues: [Crear issue](https://github.com/davihern/playwrightdemo/issues)
 

@@ -24,6 +24,12 @@ export interface ResultadoAccesibilidad {
 
 /**
  * Interfaz para opciones de verificación de contraste
+ * 
+ * NOTA: Esta interfaz está definida para futuras implementaciones de verificación
+ * de contraste de color (WCAG 2.1 Criterio 1.4.3 - Nivel AA). Actualmente no está
+ * implementada en el método escanearPaginaCompleta(). Para una implementación completa
+ * de verificación de contraste, se requeriría obtener los colores calculados de los
+ * elementos y calcular las proporciones de contraste.
  */
 export interface OpcionesContraste {
   umbralMinimo?: number;
@@ -152,13 +158,16 @@ export class AccesibilidadHelper {
   async verificarNombreAccesible(locator: Locator): Promise<ResultadoAccesibilidad> {
     try {
       const nombreAccesible = await locator.evaluate((el) => {
-        // Intenta obtener el nombre accesible de varias formas
-        const ariaLabel = el.getAttribute('aria-label');
+        // Intenta obtener el nombre accesible siguiendo el orden de prioridad de ARIA
+        // Según especificación ARIA, aria-labelledby tiene prioridad sobre aria-label
         const ariaLabelledBy = el.getAttribute('aria-labelledby');
+        const ariaLabel = el.getAttribute('aria-label');
         const title = el.getAttribute('title');
         const innerText = el.textContent?.trim();
         
-        return ariaLabel || ariaLabelledBy || title || innerText || null;
+        // Nota: aria-labelledby devuelve el ID, no el texto real del elemento referenciado
+        // En una implementación completa, se debería resolver el ID al texto del elemento
+        return ariaLabelledBy || ariaLabel || title || innerText || null;
       });
 
       if (!nombreAccesible) {
@@ -246,6 +255,12 @@ export class AccesibilidadHelper {
       // Verificar que empiece con h1
       if (encabezados[0].nivel !== 1) {
         throw new Error('La página no comienza con un h1');
+      }
+
+      // Verificar que solo haya un h1 en la página (mejores prácticas WCAG)
+      const h1Count = encabezados.filter(h => h.nivel === 1).length;
+      if (h1Count > 1) {
+        throw new Error(`Se encontraron ${h1Count} elementos h1. Debería haber solo uno por página`);
       }
 
       // Verificar que no haya saltos en la jerarquía
@@ -384,7 +399,9 @@ export class AccesibilidadHelper {
       const descripcion = await locator.evaluate((el) => {
         const tag = el.tagName.toLowerCase();
         const id = el.id ? `#${el.id}` : '';
-        const classes = el.className ? `.${el.className.split(' ').join('.')}` : '';
+        const classes = el.className 
+          ? `.${el.className.trim().split(/\s+/).filter(c => c).join('.')}` 
+          : '';
         const texto = el.textContent?.trim().substring(0, 30) || '';
         return `<${tag}${id}${classes}>${texto ? ` "${texto}..."` : ''}`;
       });

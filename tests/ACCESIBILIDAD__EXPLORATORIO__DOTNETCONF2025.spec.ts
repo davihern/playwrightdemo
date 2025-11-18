@@ -10,6 +10,12 @@
  * 
  * Alcance: Verificación de roles ARIA, navegación por teclado, etiquetas de formularios,
  * texto alternativo en imágenes y jerarquía de encabezados.
+ * 
+ * Limitaciones conocidas: Las herramientas automatizadas solo detectan aproximadamente
+ * el 30-40% de los problemas de accesibilidad. Para lograr una cobertura completa,
+ * se requieren pruebas manuales adicionales y exploratorias, especialmente para
+ * identificar problemas de usabilidad, flujos complejos y barreras contextuales
+ * que no pueden ser detectadas automáticamente.
  */
 
 import { test, expect } from '@playwright/test';
@@ -72,9 +78,9 @@ test.describe('Pruebas de Accesibilidad - DOTNET CONF 2025', () => {
       await accesibilidad.verificarTextoAlternativo(logo);
     }
     
-    // Verificar enlaces principales
+    // Verificar enlaces principales - verificamos todos para asegurar cobertura completa
     const enlacesPrincipales = await page.locator('a[href]').all();
-    const enlacesAVerificar = enlacesPrincipales.slice(0, 5); // Verificar los primeros 5 enlaces
+    const enlacesAVerificar = enlacesPrincipales;
     
     for (const enlace of enlacesAVerificar) {
       await accesibilidad.verificarNombreAccesible(enlace);
@@ -85,7 +91,10 @@ test.describe('Pruebas de Accesibilidad - DOTNET CONF 2025', () => {
     const reporte = accesibilidad.generarReporte();
     accesibilidad.imprimirReporte();
     
-    // Validación: Al menos el 80% de las verificaciones deben ser exitosas
+    // Validación: Se requiere al menos 80% de éxito para este test exploratorio.
+    // Nota: En un entorno de producción con requisitos WCAG estrictos, considere usar 100%.
+    // El 80% permite identificar patrones y problemas principales en pruebas exploratorias
+    // sin fallar por problemas menores que pueden requerir contexto adicional.
     const tasaExito = (reporte.exitosos / reporte.total) * 100;
     console.log(`\nTasa de éxito: ${tasaExito.toFixed(2)}%`);
     expect(tasaExito).toBeGreaterThanOrEqual(80);
@@ -136,7 +145,9 @@ test.describe('Pruebas de Accesibilidad - DOTNET CONF 2025', () => {
     const reporte = accesibilidad.generarReporte();
     accesibilidad.imprimirReporte();
     
-    // Al menos 70% de las imágenes deben tener alt correcto
+    // Todas las imágenes no decorativas deben tener texto alternativo adecuado (WCAG 2.1 - Criterio 1.1.1)
+    // En este test exploratorio usamos un umbral del 70% para identificar patrones.
+    // Para cumplimiento estricto de WCAG 2.1, todas las imágenes deben pasar (100%).
     const tasaExito = (reporte.exitosos / reporte.total) * 100;
     console.log(`\nTasa de éxito en imágenes: ${tasaExito.toFixed(2)}%`);
     expect(tasaExito).toBeGreaterThanOrEqual(70);
