@@ -13,7 +13,8 @@ test.describe('Movie Ratings Tests', () => {
 test('verify movie rating_MADEBYCOPILOT', async ({ page }) => {
   
 
-    // Test parameters
+  
+  // Test parameters
   const movieTitle = 'Deadpool & Wolverine';
   const expectedRating = 5; // Expected rating in stars
 

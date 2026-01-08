@@ -1,0 +1,77 @@
+# Workspace Structure
+
+```
+deadpool-wolverine-duration-test.spec.ts
+microsoft-navigation.spec.ts
+package.json
+playwright_test_analysis.ipynb
+playwright.config.ts
+playwright.service.config.ts
+pricing.css
+pricing.html
+Readme.md
+results.json
+chatmodes/
+    4.1-Beast.chatmode.md
+    address-comments.chatmode.md
+    api-architect.chatmode.md
+    atlassian-requirements-to-jira.chatmode.md
+    azure-logic-apps-expert.chatmode.md
+    azure-principal-architect.chatmode.md
+    azure-saas-architect.chatmode.md
+    azure-verified-modules-bicep.chatmode.md
+    azure-verified-modules-terraform.chatmode.md
+    bicep-implement.chatmode.md
+    bicep-plan.chatmode.md
+    blueprint-mode-codex.chatmode.md
+    blueprint-mode.chatmode.md
+    clojure-interactive-programming.chatmode.md
+    code-tour.chatmode.md
+    critical-thinking.chatmode.md
+    csharp-dotnet-janitor.chatmode.md
+    debug.chatmode.md
+    declarative-agents-architect.chatmode.md
+    demonstrate-understanding.chatmode.md
+    electron-angular-native.chatmode.md
+    expert-cpp-software-engineer.chatmode.md
+    expert-dotnet-software-engineer.chatmode.md
+    expert-react-frontend-engineer.chatmode.md
+    gilfoyle.chatmode.md
+    implementation-plan.chatmode.md
+    janitor.chatmode.md
+    kusto-assistant.chatmode.md
+    mentor.chatmode.md
+    meta-agentic-project-scaffold.chatmode.md
+    microsoft_learn_contributor.chatmode.md
+    microsoft-study-mode.chatmode.md
+    ms-sql-dba.chatmode.md
+    plan.chatmode.md
+    planner.chatmode.md
+    playwright-tester.chatmode.md
+    postgresql-dba.chatmode.md
+    power-platform-expert.chatmode.md
+    prd.chatmode.md
+    principal-software-engineer.chatmode.md
+    prompt-builder.chatmode.md
+    prompt-engineer.chatmode.md
+    refine-issue.chatmode.md
+    research-technical-spike.chatmode.md
+    rust-gpt-4.1-beast-mode.chatmode.md
+    semantic-kernel-dotnet.chatmode.md
+    semantic-kernel-python.chatmode.md
+    simple-app-idea-generator.chatmode.md
+    software-engineer-agent-v1.chatmode.md
+    specification.chatmode.md
+    task-planner.chatmode.md
+    ...
+e2e/
+    ...
+images/
+instructions/
+playwright-report/
+prompts/
+screenshots/
+test-results/
+tests/
+tests-examples/
+```
