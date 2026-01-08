@@ -13,3 +13,6 @@
         1. Analyzing the Figma design
         2. Creating the basic HTML structure that creates an exact replica of the figma design
         3. Implementing the CSS styling
+
+
+ 

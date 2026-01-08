@@ -1,3 +1,16 @@
+---
+post_title: "Project Title"
+author1: "Your Name"
+post_slug: "project-title"
+microsoft_alias: "youralias"
+featured_image: "https://example.com/featured-image.png"
+categories: ["Category1", "Category2"]
+tags: ["Tag1", "Tag2"]
+ai_note: "No"
+summary: "A brief description of what this project does and who it's for."
+post_date: "2025-10-22"
+---
+
 # Project Title
 
 A brief description of what this project does and who it's for.
