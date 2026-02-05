@@ -1,77 +1,38 @@
-# Workspace Structure
+--- IGNORE --- REPOSITORY OVERVIEW --- IGNORE ---
+---
+post_title: "Repository Overview"
+author1: "davihern"
+post_slug: "repository-overview"
+microsoft_alias: "davihern"
+featured_image: "https://example.com/featured-image.png"
+categories: ["Documentation"]
+tags: ["playwright", "testing", "repository-overview"]
+ai_note: "Yes"
+summary: "High-level explanation of the Playwright demo repository contents and how to run the included examples."
+post_date: "2026-02-05"
+---
 
-```
-deadpool-wolverine-duration-test.spec.ts
-microsoft-navigation.spec.ts
-package.json
-playwright_test_analysis.ipynb
-playwright.config.ts
-playwright.service.config.ts
-pricing.css
-pricing.html
-Readme.md
-results.json
-chatmodes/
-    4.1-Beast.chatmode.md
-    address-comments.chatmode.md
-    api-architect.chatmode.md
-    atlassian-requirements-to-jira.chatmode.md
-    azure-logic-apps-expert.chatmode.md
-    azure-principal-architect.chatmode.md
-    azure-saas-architect.chatmode.md
-    azure-verified-modules-bicep.chatmode.md
-    azure-verified-modules-terraform.chatmode.md
-    bicep-implement.chatmode.md
-    bicep-plan.chatmode.md
-    blueprint-mode-codex.chatmode.md
-    blueprint-mode.chatmode.md
-    clojure-interactive-programming.chatmode.md
-    code-tour.chatmode.md
-    critical-thinking.chatmode.md
-    csharp-dotnet-janitor.chatmode.md
-    debug.chatmode.md
-    declarative-agents-architect.chatmode.md
-    demonstrate-understanding.chatmode.md
-    electron-angular-native.chatmode.md
-    expert-cpp-software-engineer.chatmode.md
-    expert-dotnet-software-engineer.chatmode.md
-    expert-react-frontend-engineer.chatmode.md
-    gilfoyle.chatmode.md
-    implementation-plan.chatmode.md
-    janitor.chatmode.md
-    kusto-assistant.chatmode.md
-    mentor.chatmode.md
-    meta-agentic-project-scaffold.chatmode.md
-    microsoft_learn_contributor.chatmode.md
-    microsoft-study-mode.chatmode.md
-    ms-sql-dba.chatmode.md
-    plan.chatmode.md
-    planner.chatmode.md
-    playwright-tester.chatmode.md
-    postgresql-dba.chatmode.md
-    power-platform-expert.chatmode.md
-    prd.chatmode.md
-    principal-software-engineer.chatmode.md
-    prompt-builder.chatmode.md
-    prompt-engineer.chatmode.md
-    refine-issue.chatmode.md
-    research-technical-spike.chatmode.md
-    rust-gpt-4.1-beast-mode.chatmode.md
-    semantic-kernel-dotnet.chatmode.md
-    semantic-kernel-python.chatmode.md
-    simple-app-idea-generator.chatmode.md
-    software-engineer-agent-v1.chatmode.md
-    specification.chatmode.md
-    task-planner.chatmode.md
-    ...
-e2e/
-    ...
-images/
-instructions/
-playwright-report/
-prompts/
-screenshots/
-test-results/
-tests/
-tests-examples/
-```
+## Purpose
+This repository is a Playwright demo workspace that mixes web automation samples, exploratory tests, and a small Python math helper with accompanying tests.
+
+## Key Contents
+- `tests/`: Main Playwright specs covering movie ratings, Microsoft.com navigation, TODO app flows, and other exploratory scenarios that follow the repo's naming convention.
+- `e2e/example.spec.ts` and `tests-examples/demo-todo-app.spec.ts`: Additional sample specs kept separate from the main suite.
+- `playwright.config.ts`: Local Playwright configuration targeting chromium, firefox, and webkit with HTML reporting and trace capture on first retry.
+- `playwright.service.config.ts`: Extends the base config to run against Azure-hosted browsers and emits list, service, and JSON reporters (outputs to `results.json`).
+- `playwright-report/`, `test-results/`, `screenshots/`, and `results.json`: Generated artifacts from prior Playwright runs, including HTML reports, traces, and captured screenshots.
+- `pricing.html` and `pricing.css`: Static landing-page example that references SVG assets stored in `images/`.
+- `math.py` and `test_math.py`: Simple calculator helpers with pytest-based tests; pytest is not installed by default.
+- `workflow.yaml`: Workflow definition for orchestrating chained Azure agents.
+- `playwright_test_analysis.ipynb`: Notebook used for analyzing test behavior and results.
+- `deadpool-wolverine-duration-test.spec.ts`, `microsoft-navigation.spec.ts`, and `browser-test.js`: Empty or placeholder spec files reserved for future scenarios.
+
+## Running Checks
+- Install Node dependencies: `npm ci`.
+- Install Playwright browsers (required before running browser tests): `npx playwright install`.
+- Run the Playwright suite locally: `npx playwright test --config=playwright.config.ts --workers=1`.
+- Use the Playwright Testing service (cloud browsers) instead: `npx playwright test --config=playwright.service.config.ts --workers=20 --trace on`.
+- Run Python checks for the math helpers: `pip install pytest` then `python -m pytest`.
+
+## Current Test Status Notes
+Playwright tests currently fail locally until browsers are installed (`npx playwright install`). Pytest is unavailable out of the box, so install it before running the Python suite.
