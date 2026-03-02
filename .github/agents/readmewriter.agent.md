@@ -1,5 +1,5 @@
 ---
-name:ReadmeWriter
+name: ReadmeWriter
 description: Custom agent to create or update readme.md file based on current content and recent commits.
 ---
 
