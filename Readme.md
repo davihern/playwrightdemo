@@ -125,7 +125,7 @@ test('MICROSOFTCOM__NAVIGATE__SUCCESS', async ({ page }) => { ... });
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-org>/playwrightdemo.git
+git clone https://github.com/davihern/playwrightdemo.git
 cd playwrightdemo
 
 # 2. Install Node.js dependencies
@@ -239,16 +239,16 @@ The service config (`playwright.service.config.ts`) applies these settings on to
 | File | Target URL | What It Tests |
 |---|---|---|
 | `MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts` | microsoft.com | Page title, Microsoft logo visibility, full-page screenshot |
-| `DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` | *(scaffolded)* | .NET Conf 2025 — exploratory test template |
+| `DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` | N/A (template) | .NET Conf 2025 — exploratory test template, no test body yet |
 | `VerifyMovie.spec.ts` | playwright-movies-app | Deadpool & Wolverine details, duration, cast, aria snapshot |
 | `VerifyTodoApp.spec.ts` | demo.playwright.dev/todomvc | Add todo, mark complete, verify in Completed view |
 | `demo-todo-app.spec.ts` | demo.playwright.dev/todomvc | Add todo item (additional patterns, mostly commented) |
 | `fixedtest.spec.ts` | playwright-movies-app | Movie star-rating count (Copilot-generated) |
 | `movie-ratings.spec.ts` | playwright-movies-app | Deadpool & Wolverine 5-star rating verification |
-| `movie-exploratory-test.spec.ts` | *(scaffolded)* | Exploratory test template |
+| `movie-exploratory-test.spec.ts` | N/A (template) | Exploratory test template, no test body yet |
 | `test-1.spec.ts` | demo.playwright.dev/todomvc | Add item, check Active/Completed filter |
 | `test-2.spec.ts` | localhost:4200 | Local Angular/Java app greeting message |
-| `w2m-exploratory-test.spec.ts` | *(scaffolded)* | Exploratory test template |
+| `w2m-exploratory-test.spec.ts` | N/A (template) | Exploratory test template, no test body yet |
 
 ---
 
