@@ -1,0 +1,922 @@
+Found a 5 line (74 tokens) duplication in the following files: 
+Starting at line 210 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 250 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should save edits on blur', async ({ page }) => {
+    const todoItems = page.getByTestId('todo-item');
+    await todoItems.nth(1).dblclick();
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('buy some sausages');
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).dispatchEvent('blur');
+
+=====================================================================
+Found a 12 line (66 tokens) duplication in the following files: 
+Starting at line 124 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 149 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should allow me to mark items as complete', async ({ page }) => {
+    // create a new todo locator
+    const newTodo = page.getByPlaceholder('What needs to be done?');
+
+    // Create two items.
+    for (const item of TODO_ITEMS.slice(0, 2)) {
+      await newTodo.fill(item);
+      await newTodo.press('Enter');
+    }
+
+    // Check first item.
+    const firstTodo = page.getByTestId('todo-item').nth(0);
+
+=====================================================================
+Found a 2 line (62 tokens) duplication in the following files: 
+Starting at line 144 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 165 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "James Reynolds":
+      - /url: /playwright-movies-app/person?id=4854086&page=1
+
+=====================================================================
+Found a 2 line (61 tokens) duplication in the following files: 
+Starting at line 156 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 165 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Inez Reynolds":
+      - /url: /playwright-movies-app/person?id=4846410&page=1
+
+=====================================================================
+Found a 2 line (60 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 165 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 2 line (59 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 144 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 156 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 12 line (59 tokens) duplication in the following files: 
+Starting at line 2 of /home/runner/work/playwrightdemo/playwrightdemo/tests/fixedtest.spec.ts
+Starting at line 1 of /home/runner/work/playwrightdemo/playwrightdemo/tests/movie-ratings.spec.ts
+
+import { test, expect } from '@playwright/test';
+
+test.describe('Movie Ratings Tests', () => {
+       test.beforeEach(async ({ page }) => {
+         // Navigate to the movies app before each test
+         await page.goto('https://debs-obrien.github.io/playwright-movies-app');
+         
+         // Wait for the page to load
+         await expect(page.locator('main')).toBeVisible();
+      });
+
+test('verify movie rating_MADEBYCOPILOT', async ({ page }) => {
+
+=====================================================================
+Found a 2 line (58 tokens) duplication in the following files: 
+Starting at line 24 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 32 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+        - link "Action":
+          - /url: /playwright-movies-app/genre?id=28&name=Action&page=1
+
+=====================================================================
+Found a 4 line (58 tokens) duplication in the following files: 
+Starting at line 25 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 29 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+          - /url: /playwright-movies-app/genre?id=28&name=Action&page=1
+          - img
+      - listitem:
+        - link "Comedy":
+
+=====================================================================
+Found a 2 line (54 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 69 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 2 line (54 tokens) duplication in the following files: 
+Starting at line 48 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 126 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Matthew Macfadyen":
+      - /url: /playwright-movies-app/person?id=15576&page=1
+
+=====================================================================
+Found a 2 line (54 tokens) duplication in the following files: 
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 162 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Rob Delaney":
+      - /url: /playwright-movies-app/person?id=1091324&page=1
+
+=====================================================================
+Found a 2 line (54 tokens) duplication in the following files: 
+Starting at line 93 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 201 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Brianna Hildebrand":
+      - /url: /playwright-movies-app/person?id=1492326&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 24 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 28 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 32 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+        - link "Action":
+          - /url: /playwright-movies-app/genre?id=28&name=Action&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 45 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 57 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Emma Corrin":
+      - /url: /playwright-movies-app/person?id=2324569&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 48 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 51 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 114 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 126 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Matthew Macfadyen":
+      - /url: /playwright-movies-app/person?id=15576&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 141 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Rob Delaney":
+      - /url: /playwright-movies-app/person?id=1091324&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 78 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 132 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Henry Cavill":
+      - /url: /playwright-movies-app/person?id=73968&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 93 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 150 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 201 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Brianna Hildebrand":
+      - /url: /playwright-movies-app/person?id=1492326&page=1
+
+=====================================================================
+Found a 2 line (53 tokens) duplication in the following files: 
+Starting at line 183 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 204 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Nilly Cetin":
+      - /url: /playwright-movies-app/person?id=4858600&page=1
+
+=====================================================================
+Found a 12 line (52 tokens) duplication in the following files: 
+Starting at line 124 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 306 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should allow me to mark items as complete', async ({ page }) => {
+    // create a new todo locator
+    const newTodo = page.getByPlaceholder('What needs to be done?');
+
+    // Create two items.
+    for (const item of TODO_ITEMS.slice(0, 2)) {
+      await newTodo.fill(item);
+      await newTodo.press('Enter');
+    }
+
+    // Check first item.
+    const firstTodo = page.getByTestId('todo-item').nth(0);
+
+=====================================================================
+Found a 4 line (52 tokens) duplication in the following files: 
+Starting at line 210 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 224 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 238 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 250 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should save edits on blur', async ({ page }) => {
+    const todoItems = page.getByTestId('todo-item');
+    await todoItems.nth(1).dblclick();
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('buy some sausages');
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 63 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 69 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 75 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 162 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 42 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 105 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Hugh Jackman":
+      - /url: /playwright-movies-app/person?id=6968&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 45 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 168 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 183 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 195 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 204 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Emma Corrin":
+      - /url: /playwright-movies-app/person?id=2324569&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 54 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 81 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Jon Favreau":
+      - /url: /playwright-movies-app/person?id=15277&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 57 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 168 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 183 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 195 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 204 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Morena Baccarin":
+      - /url: /playwright-movies-app/person?id=54882&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 108 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 141 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 162 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Rob Delaney":
+      - /url: /playwright-movies-app/person?id=1091324&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 66 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 102 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 129 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 198 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Jennifer Garner":
+      - /url: /playwright-movies-app/person?id=9278&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 78 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 192 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Henry Cavill":
+      - /url: /playwright-movies-app/person?id=73968&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 84 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 93 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 150 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 201 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Aaron Stanford":
+      - /url: /playwright-movies-app/person?id=11022&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 120 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 135 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Aydin Ahmed":
+      - /url: /playwright-movies-app/person?id=4848499&page=1
+
+=====================================================================
+Found a 2 line (52 tokens) duplication in the following files: 
+Starting at line 132 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 192 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Greg Hemphill":
+      - /url: /playwright-movies-app/person?id=167008&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 138 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 144 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 156 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 165 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 174 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 177 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 48 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 51 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 54 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 63 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 69 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 75 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 81 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 84 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 90 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 93 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 105 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 114 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 123 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 126 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 132 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 147 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 150 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 162 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 201 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 42 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 45 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 48 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 51 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 57 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 105 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 114 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 126 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 159 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 168 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 183 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 195 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 204 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Hugh Jackman":
+      - /url: /playwright-movies-app/person?id=6968&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 111 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 141 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 153 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 162 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Rob Delaney":
+      - /url: /playwright-movies-app/person?id=1091324&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 66 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 147 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 198 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Jennifer Garner":
+      - /url: /playwright-movies-app/person?id=9278&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 84 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 120 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 135 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 150 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 201 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Aaron Stanford":
+      - /url: /playwright-movies-app/person?id=11022&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 87 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 180 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 189 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Tyler Mane":
+      - /url: /playwright-movies-app/person?id=9832&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 96 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 117 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Shioli Kutsuna":
+      - /url: /playwright-movies-app/person?id=230660&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 102 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 147 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Randal Reeder":
+      - /url: /playwright-movies-app/person?id=215887&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 108 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 111 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 153 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Nick Pauley":
+      - /url: /playwright-movies-app/person?id=4561764&page=1
+
+=====================================================================
+Found a 2 line (51 tokens) duplication in the following files: 
+Starting at line 129 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 147 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ollie Palmer":
+      - /url: /playwright-movies-app/person?id=4698632&page=1
+
+=====================================================================
+Found a 6 line (50 tokens) duplication in the following files: 
+Starting at line 342 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 352 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should allow me to display active items', async ({ page }) => {
+    const todoItem = page.getByTestId('todo-item');
+    await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
+
+    await checkNumberOfCompletedTodosInLocalStorage(page, 1);
+    await page.getByRole('link', { name: 'Active' }).click();
+
+=====================================================================
+Found a 2 line (50 tokens) duplication in the following files: 
+Starting at line 39 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 42 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 45 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 54 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 57 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 60 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 63 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 66 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 69 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 72 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 75 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 78 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 81 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 84 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 87 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 90 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 93 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 96 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 99 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 102 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 105 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 108 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 111 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 114 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 117 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 120 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 123 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 126 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 129 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 132 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 135 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 138 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 141 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 144 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 147 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 150 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 153 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 156 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 159 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 162 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 165 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 168 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 171 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 174 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 177 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 180 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 183 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 186 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 189 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 192 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 195 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 198 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 201 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 204 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 207 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - link "Ryan Reynolds":
+      - /url: /playwright-movies-app/person?id=10859&page=1
+
+=====================================================================
+Found a 4 line (49 tokens) duplication in the following files: 
+Starting at line 317 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 326 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await firstTodoCheck.check();
+    await expect(todoItems).toHaveText([TODO_ITEMS[0], TODO_ITEMS[1]]);
+    await expect(firstTodoCheck).toBeChecked();
+    await expect(todoItems).toHaveClass(['completed', '']);
+
+=====================================================================
+Found a 5 line (49 tokens) duplication in the following files: 
+Starting at line 344 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 386 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
+
+    await checkNumberOfCompletedTodosInLocalStorage(page, 1);
+    await page.getByRole('link', { name: 'Active' }).click();
+    await expect(todoItem).toHaveCount(2);
+
+=====================================================================
+Found a 4 line (49 tokens) duplication in the following files: 
+Starting at line 378 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 385 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should allow me to display completed items', async ({ page }) => {
+    await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
+    await checkNumberOfCompletedTodosInLocalStorage(page, 1);
+    await page.getByRole('link', { name: 'Completed' }).click();
+
+=====================================================================
+Found a 10 line (41 tokens) duplication in the following files: 
+Starting at line 14 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 40 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+  test('should allow me to add todo items', async ({ page }) => {
+    // create a new todo locator
+    const newTodo = page.getByPlaceholder('What needs to be done?');
+
+    // Create 1st todo.
+    await newTodo.fill(TODO_ITEMS[0]);
+    await newTodo.press('Enter');
+
+    // Make sure the list only has one todo item.
+    await expect(page.getByTestId('todo-title')).toHaveText([
+
+=====================================================================
+Found a 5 line (40 tokens) duplication in the following files: 
+Starting at line 227 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 241 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('    buy some sausages    ');
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).press('Enter');
+
+    await expect(todoItems).toHaveText([
+      TODO_ITEMS[0],
+
+=====================================================================
+Found a 4 line (40 tokens) duplication in the following files: 
+Starting at line 344 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 379 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
+
+    await checkNumberOfCompletedTodosInLocalStorage(page, 1);
+    await page.getByRole('link', { name: 'Active' }).click();
+
+=====================================================================
+Found a 11 line (39 tokens) duplication in the following files: 
+Starting at line 214 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 228 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).dispatchEvent('blur');
+
+    await expect(todoItems).toHaveText([
+      TODO_ITEMS[0],
+      'buy some sausages',
+      TODO_ITEMS[2],
+    ]);
+    await checkTodosInLocalStorage(page, 'buy some sausages');
+  });
+
+  test('should trim entered text', async ({ page }) => {
+
+=====================================================================
+Found a 7 line (37 tokens) duplication in the following files: 
+Starting at line 182 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 228 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await secondTodo.getByRole('textbox', { name: 'Edit' }).press('Enter');
+
+    // Explicitly assert the new text value.
+    await expect(todoItems).toHaveText([
+      TODO_ITEMS[0],
+      'buy some sausages',
+      TODO_ITEMS[2]
+
+=====================================================================
+Found a 1 line (37 tokens) duplication in the following files: 
+Starting at line 25 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 40 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 43 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 46 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 49 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 52 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 55 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 58 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 61 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 64 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 67 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 70 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 73 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 76 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 79 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 82 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 85 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 88 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 91 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 94 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 97 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 100 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 103 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 106 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 109 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 112 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 115 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 118 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 121 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 124 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 127 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 130 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 133 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 136 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 139 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 142 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 145 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 148 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 151 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 154 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 157 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 160 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 163 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 166 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 169 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 172 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 175 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 178 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 181 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 184 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 187 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 190 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 193 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 196 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 199 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 202 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 205 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 208 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+          - /url: /playwright-movies-app/genre?id=28&name=Action&page=1
+
+=====================================================================
+Found a 1 line (37 tokens) duplication in the following files: 
+Starting at line 29 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 40 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 43 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 46 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 49 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 52 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 55 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 58 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 61 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 64 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 67 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 70 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 73 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 76 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 79 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 82 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 85 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 88 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 91 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 94 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 97 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 100 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 103 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 106 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 109 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 112 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 115 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 118 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 121 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 124 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 127 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 130 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 133 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 136 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 139 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 142 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 145 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 148 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 151 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 154 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 157 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 160 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 163 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 166 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 169 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 172 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 175 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 178 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 181 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 184 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 187 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 190 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 193 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 196 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 199 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 202 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 205 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 208 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+          - /url: /playwright-movies-app/genre?id=35&name=Comedy&page=1
+
+=====================================================================
+Found a 1 line (37 tokens) duplication in the following files: 
+Starting at line 33 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 40 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 43 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 46 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 49 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 52 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 55 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 58 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 61 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 64 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 67 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 70 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 73 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 76 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 79 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 82 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 85 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 88 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 91 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 94 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 97 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 100 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 103 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 106 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 109 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 112 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 115 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 118 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 121 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 124 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 127 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 130 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 133 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 136 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 139 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 142 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 145 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 148 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 151 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 154 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 157 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 160 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 163 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 166 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 169 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 172 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 175 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 178 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 181 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 184 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 187 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 190 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 193 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 196 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 199 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 202 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 205 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 208 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+          - /url: /playwright-movies-app/genre?id=878&name=Science+Fiction&page=1
+
+=====================================================================
+Found a 3 line (36 tokens) duplication in the following files: 
+Starting at line 5 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyTodoApp.spec.ts
+Starting at line 4 of /home/runner/work/playwrightdemo/playwrightdemo/tests/test-1.spec.ts
+
+    await page.locator('html').click();
+    await page.getByRole('textbox', { name: 'What needs to be done?' }).click();
+    await page.getByRole('textbox', { name: 'What needs to be done?' }).fill('Hello');
+
+=====================================================================
+Found a 7 line (35 tokens) duplication in the following files: 
+Starting at line 72 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 194 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+test.describe('Mark all as completed', () => {
+  test.beforeEach(async ({ page }) => {
+    await createDefaultTodos(page);
+    await checkNumberOfTodosInLocalStorage(page, 3);
+  });
+
+  test.afterEach(async ({ page }) => {
+
+=====================================================================
+Found a 3 line (35 tokens) duplication in the following files: 
+Starting at line 22 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 26 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 30 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+    - list "genres":
+      - listitem:
+        - link "Action":
+
+=====================================================================
+Found a 3 line (33 tokens) duplication in the following files: 
+Starting at line 25 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 33 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+          - /url: /playwright-movies-app/genre?id=28&name=Action&page=1
+          - img
+      - listitem:
+
+=====================================================================
+Found a 13 line (33 tokens) duplication in the following files: 
+Starting at line 10 of /home/runner/work/playwrightdemo/playwrightdemo/tests/fixedtest.spec.ts
+Starting at line 41 of /home/runner/work/playwrightdemo/playwrightdemo/tests/movie-ratings.spec.ts
+
+         await expect(page.locator('main')).toBeVisible();
+      });
+
+test('verify movie rating_MADEBYCOPILOT', async ({ page }) => {
+  
+
+  
+  // Test parameters
+  const movieTitle = 'Deadpool & Wolverine';
+  const expectedRating = 5; // Expected rating in stars
+
+  // Locate the movie container by title (adjust selector as needed)
+  const movieContainer = page.locator(`li:has(h2:has-text("${movieTitle}"))`).first();
+
+=====================================================================
+Found a 5 line (31 tokens) duplication in the following files: 
+Starting at line 182 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 242 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await secondTodo.getByRole('textbox', { name: 'Edit' }).press('Enter');
+
+    // Explicitly assert the new text value.
+    await expect(todoItems).toHaveText([
+      TODO_ITEMS[0],
+
+=====================================================================
+Found a 5 line (31 tokens) duplication in the following files: 
+Starting at line 354 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 379 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 386 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+    await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
+
+    await checkNumberOfCompletedTodosInLocalStorage(page, 1);
+
+    await test.step('Showing all items', async () => {
+
+=====================================================================
+Found a 3 line (30 tokens) duplication in the following files: 
+Starting at line 421 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+Starting at line 427 of /home/runner/work/playwrightdemo/playwrightdemo/tests-examples/demo-todo-app.spec.ts
+
+async function checkNumberOfTodosInLocalStorage(page: Page, expected: number) {
+  return await page.waitForFunction(e => {
+    return JSON.parse(localStorage['react-todos']).length === e;
+
+=====================================================================
+Found a 2 line (30 tokens) duplication in the following files: 
+Starting at line 49 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+Starting at line 163 of /home/runner/work/playwrightdemo/playwrightdemo/tests/VerifyMovie.spec.ts
+
+      - /url: /playwright-movies-app/person?id=15576&page=1
+      - img "Matthew Macfadyen"
+
