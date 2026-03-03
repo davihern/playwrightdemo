@@ -8,3 +8,9 @@ npx playwright test --config=playwright.service.config.ts --workers=20 --trace o
 
 Prueba localhost
 npx playwright test tests/test-2.spec.ts --config=playwright.service.config.ts --workers=20 --trace on
+
+here is my grocery list to buy:
+tomatoes
+potatoes
+bananas
+milk
