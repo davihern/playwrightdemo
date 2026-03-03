@@ -1,3 +1,8 @@
+This is the readme for the project.
+
+
+
+Here is the steps to run manually the Playwright scripts.
 export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/westeurope_acc3654d-81b9-47c1-a91b-4ebbed3764b1/browsers"
 
 Prueba todos los tests:
