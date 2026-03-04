@@ -1,3 +1,7 @@
+--- IGNORE ---
+PLAYWRIGHT TYPESCRIPT TESTING DEMO README
+--- IGNORE ---
+
 # 🎭 Playwright TypeScript Testing Demo
 
 > A hands-on demo project showcasing end-to-end (E2E) test automation with
@@ -280,7 +284,7 @@ Navigates to the movies app homepage and validates the star-rating display for
 
 ---
 
-### �� Python Math Unit Tests
+### 🧮 Python Math Unit Tests
 **File:** `test_math.py`
 
 pytest suite covering `math.py` utility functions:
