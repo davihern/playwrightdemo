@@ -173,7 +173,7 @@ npx playwright test --ui
 Exporta la URL del servicio Azure Playwright Testing antes de ejecutar:
 
 ```bash
-export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/westeurope_acc3654d-81b9-47c1-a91b-4ebbed3764b1/browsers"
+export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/<your-account-id>/browsers"
 ```
 
 #### Paso 2 — Ejecutar todos los tests en paralelo
@@ -224,7 +224,7 @@ de Microsoft para ejecutar pruebas Playwright en la nube con alta paralelizació
 ### URL del Endpoint
 
 ```
-wss://westeurope.api.playwright.microsoft.com/accounts/westeurope_acc3654d-81b9-47c1-a91b-4ebbed3764b1/browsers
+wss://westeurope.api.playwright.microsoft.com/accounts/<your-account-id>/browsers
 ```
 
 ### Configuración del Servicio (`playwright.service.config.ts`)
@@ -271,7 +271,7 @@ DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts
 npx playwright test tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts
 
 # Ejecución en Azure Playwright Testing
-export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/westeurope_acc3654d-81b9-47c1-a91b-4ebbed3764b1/browsers"
+export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/<your-account-id>/browsers"
 npx playwright test tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts \
   --config=playwright.service.config.ts \
   --workers=10 \
