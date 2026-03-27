@@ -1,64 +1,64 @@
---- IGNORE --- ESTE ES UN ARCHIVO MARKDOWN QUE SIGUE TODAS LAS REGLAS DEFINIDAS EN LAS INSTRUCCIONES --- IGNORE ---
+--- IGNORE --- THIS IS A MARKDOWN FILE FOLLOWING ALL RULES DEFINED IN THE INSTRUCTIONS --- IGNORE ---
 
 ---
-post_title: "Playwright Demo — Pruebas E2E con Azure Playwright Testing"
-author1: "Equipo de Desarrollo"
+post_title: "Playwright Demo — E2E Tests with Azure Playwright Testing"
+author1: "Development Team"
 post_slug: "playwright-demo-azure-testing"
 microsoft_alias: "playwrightdemo"
 featured_image: "https://raw.githubusercontent.com/playwrightdemo/playwrightdemo/main/aitour.jpg"
 categories: ["Testing", "Azure", "DevOps"]
-tags: ["Playwright", "TypeScript", "Azure Playwright Testing", "E2E", "Automatización"]
+tags: ["Playwright", "TypeScript", "Azure Playwright Testing", "E2E", "Automation"]
 ai_note: "Yes"
 summary: >
-  Proyecto de demostración de pruebas end-to-end con Microsoft Playwright y el
-  servicio Azure Playwright Testing. Incluye ejecución local y en la nube,
-  pruebas exploratorias para .NET Conf 2025, integración con Microsoft.com y
-  soporte para múltiples navegadores.
+  End-to-end test demonstration project with Microsoft Playwright and Azure
+  Playwright Testing service. Includes local and cloud execution, exploratory
+  tests for .NET Conf 2025, integration with Microsoft.com, and support for
+  multiple browsers.
 post_date: "2025-07-10"
 ---
 
-## Descripción General del Proyecto
+## Project Overview
 
-Este repositorio es una suite de pruebas **end-to-end (E2E)** construida con
-[Microsoft Playwright](https://playwright.dev/) y TypeScript. Está diseñada
-para ejecutarse tanto en entornos locales como en el servicio en la nube
-[Azure Playwright Testing](https://aka.ms/mpt/docs), que permite escalar la
-ejecución paralela de tests y centralizar los reportes.
+This repository is an **end-to-end (E2E)** test suite built with
+[Microsoft Playwright](https://playwright.dev/) and TypeScript. It is designed
+to run both locally and on the cloud via
+[Azure Playwright Testing](https://aka.ms/mpt/docs), which enables massive
+parallel test execution and centralised reporting.
 
-El proyecto incluye:
+The project includes:
 
-- Pruebas de navegación y validación de sitios públicos (Microsoft.com).
-- Pruebas exploratorias dedicadas a **.NET Conf 2025**.
-- Tests de aplicaciones de demostración (TodoMVC, aplicación de películas).
-- Integración nativa con Azure Playwright Testing para ejecución paralela masiva.
-- Generación de reportes en formato HTML y JSON.
-
----
-
-## Tabla de Contenidos
-
-- [Requisitos Previos](#requisitos-previos)
-- [Instalación](#instalación)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Convención de Nombres de Tests](#convención-de-nombres-de-tests)
-- [Ejecución de Tests](#ejecución-de-tests)
-  - [Ejecución Local](#ejecución-local)
-  - [Ejecución con Azure Playwright Testing](#ejecución-con-azure-playwright-testing)
-- [Servicio Azure Playwright Testing](#servicio-azure-playwright-testing)
-- [Tests Exploratorios — .NET Conf 2025](#tests-exploratorios--net-conf-2025)
-- [Suite de Tests Disponibles](#suite-de-tests-disponibles)
-- [Configuración](#configuración)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- Navigation and validation tests for public websites (Microsoft.com).
+- Exploratory tests dedicated to **.NET Conf 2025**.
+- Tests for demo applications (TodoMVC, movies app).
+- Native integration with Azure Playwright Testing for large-scale parallel runs.
+- Report generation in HTML and JSON formats.
 
 ---
 
-## Requisitos Previos
+## Table of Contents
 
-Asegúrate de tener instalado lo siguiente antes de comenzar:
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Test Naming Convention](#test-naming-convention)
+- [Running Tests](#running-tests)
+  - [Local Execution](#local-execution)
+  - [Azure Playwright Testing Execution](#azure-playwright-testing-execution)
+- [Azure Playwright Testing Service](#azure-playwright-testing-service)
+- [Exploratory Tests — .NET Conf 2025](#exploratory-tests--net-conf-2025)
+- [Available Test Suite](#available-test-suite)
+- [Configuration](#configuration)
+- [Technologies](#technologies)
 
-- [Node.js](https://nodejs.org/) v18 o superior
-- [npm](https://www.npmjs.com/) v9 o superior
-- Acceso a una cuenta de **Azure Playwright Testing** (para ejecución en la nube)
+---
+
+## Prerequisites
+
+Make sure the following are installed before you start:
+
+- [Node.js](https://nodejs.org/) v18 or higher
+- [npm](https://www.npmjs.com/) v9 or higher
+- Access to an **Azure Playwright Testing** account (for cloud execution)
 
 ```bash
 node --version
@@ -67,22 +67,22 @@ npm --version
 
 ---
 
-## Instalación
+## Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/playwrightdemo/playwrightdemo.git
    cd playwrightdemo
    ```
 
-2. Instala las dependencias del proyecto:
+2. Install project dependencies:
 
    ```bash
    npm install
    ```
 
-3. Instala los navegadores requeridos por Playwright:
+3. Install the browsers required by Playwright:
 
    ```bash
    npx playwright install
@@ -90,11 +90,11 @@ npm --version
 
 ---
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 playwrightdemo/
-├── tests/                            # Suite principal de tests E2E
+├── tests/                            # Main E2E test suite
 │   ├── MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts
 │   ├── DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts
 │   ├── VerifyMovie.spec.ts
@@ -106,95 +106,94 @@ playwrightdemo/
 │   ├── demo-todo-app.spec.ts
 │   ├── test-1.spec.ts
 │   └── test-2.spec.ts
-├── tests-examples/                   # Tests de ejemplo de Playwright
-├── e2e/                              # Tests de flujo completo adicionales
-├── screenshots/                      # Capturas de pantalla generadas
-├── playwright.config.ts              # Configuración local de Playwright
-├── playwright.service.config.ts      # Configuración para Azure Playwright Testing
-├── package.json                      # Dependencias y metadatos del proyecto
-├── workflow.yaml                     # Definición de workflow de agentes IA
-└── README.md                         # Documentación principal del proyecto
+├── tests-examples/                   # Playwright example tests
+├── e2e/                              # Additional full-flow tests
+├── screenshots/                      # Generated screenshots
+├── playwright.config.ts              # Local Playwright configuration
+├── playwright.service.config.ts      # Azure Playwright Testing configuration
+├── package.json                      # Dependencies and project metadata
+├── workflow.yaml                     # AI agent workflow definition
+└── README.md                         # Project documentation
 ```
 
 ---
 
-## Convención de Nombres de Tests
+## Test Naming Convention
 
-Los archivos de test principales siguen la convención de doble guión bajo:
+Primary test files follow the double-underscore convention:
 
 ```
-ESCENARIO__ACCIÓN__RESULTADOESPERADO.spec.ts
+SCENARIO__ACTION__EXPECTEDRESULT.spec.ts
 ```
 
-**Ejemplos:**
+**Examples:**
 
-| Archivo | Escenario | Acción | Resultado Esperado |
+| File | Scenario | Action | Expected Result |
 |---|---|---|---|
-| `MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts` | Microsoft.com | Navegar | Éxito |
-| `DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` | .NET Conf 2025 | Explorar | Funcionalidad |
+| `MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts` | Microsoft.com | Navigate | Success |
+| `DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` | .NET Conf 2025 | Explore | Functionality |
 
-Esta convención permite identificar de manera inmediata el propósito de cada
-test sin necesidad de abrir el archivo.
+This convention makes it immediately clear what each test does without opening the file.
 
 ---
 
-## Ejecución de Tests
+## Running Tests
 
-### Ejecución Local
+### Local Execution
 
-Ejecuta todos los tests en modo local usando la configuración estándar:
+Run all tests locally using the standard configuration:
 
 ```bash
 npx playwright test
 ```
 
-Ejecuta un test específico:
+Run a specific test:
 
 ```bash
 npx playwright test tests/MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts
 ```
 
-Abre el informe HTML después de la ejecución:
+Open the HTML report after execution:
 
 ```bash
 npx playwright show-report
 ```
 
-Ejecuta los tests en modo con interfaz gráfica (UI Mode):
+Run tests in UI Mode:
 
 ```bash
 npx playwright test --ui
 ```
 
-### Ejecución con Azure Playwright Testing
+### Azure Playwright Testing Execution
 
-#### Paso 1 — Configurar la variable de entorno del servicio
+#### Step 1 — Set the service environment variable
 
-Exporta la URL del servicio Azure Playwright Testing antes de ejecutar:
+Export the Azure Playwright Testing service URL before running:
 
 ```bash
 export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/<your-account-id>/browsers"
 ```
 
-#### Paso 2 — Ejecutar todos los tests en paralelo
+#### Step 2 — Run all tests in parallel
 
-Ejecuta la suite completa con hasta 80 workers en paralelo:
+Run the full suite with up to 80 parallel workers:
 
 ```bash
 npx playwright test --config=playwright.service.config.ts --workers=80
 ```
 
-#### Paso 3 — Ejecutar con trazas habilitadas
+#### Step 3 — Run with traces enabled
 
-Habilita la captura de trazas para diagnóstico de fallos:
+Enable trace capture for failure diagnostics:
 
 ```bash
 npx playwright test --config=playwright.service.config.ts --workers=20 --trace on
 ```
 
-#### Paso 4 — Ejecutar un test local apuntando al servicio
+#### Step 4 — Run a local test against the service
 
-Prueba un test que apunta a `localhost` a través del servicio:
+Test a spec that targets `localhost` through the service:
 
 ```bash
 npx playwright test tests/test-2.spec.ts \
@@ -205,72 +204,72 @@ npx playwright test tests/test-2.spec.ts \
 
 ---
 
-## Servicio Azure Playwright Testing
+## Azure Playwright Testing Service
 
-El proyecto está integrado con
-[Azure Playwright Testing](https://aka.ms/mpt/docs), el servicio administrado
-de Microsoft para ejecutar pruebas Playwright en la nube con alta paralelización.
+The project is integrated with
+[Azure Playwright Testing](https://aka.ms/mpt/docs), Microsoft's managed
+service for running Playwright tests in the cloud with high parallelisation.
 
-### Detalles del Servicio
+### Service Details
 
-| Parámetro | Valor |
+| Parameter | Value |
 |---|---|
-| **Región** | West Europe |
-| **Sistema Operativo** | Linux |
-| **Timeout por test** | 30 000 ms |
-| **Navegadores en la nube** | Habilitados (`useCloudHostedBrowsers: true`) |
-| **Red expuesta** | `<loopback>` |
+| **Region** | West Europe |
+| **Operating System** | Linux |
+| **Timeout per test** | 30 000 ms |
+| **Cloud-hosted browsers** | Enabled (`useCloudHostedBrowsers: true`) |
+| **Exposed network** | `<loopback>` |
 
-### URL del Endpoint
+### Endpoint URL
 
 ```
 wss://westeurope.api.playwright.microsoft.com/accounts/<your-account-id>/browsers
 ```
 
-### Configuración del Servicio (`playwright.service.config.ts`)
+### Service Configuration (`playwright.service.config.ts`)
 
-El archivo `playwright.service.config.ts` extiende la configuración local
-y agrega los siguientes reportes automáticamente:
+The `playwright.service.config.ts` file extends the local configuration and
+automatically adds the following reporters:
 
-- **`list`** — Salida en consola línea por línea.
-- **`@azure/microsoft-playwright-testing/reporter`** — Reporte integrado en
-  el portal de Azure Playwright Testing.
-- **`json`** — Reporte en archivo `results.json` para integración con pipelines.
+- **`list`** — Line-by-line console output.
+- **`@azure/microsoft-playwright-testing/reporter`** — Built-in report in the
+  Azure Playwright Testing portal.
+- **`json`** — Report saved to `results.json` for pipeline integration.
 
-> 🔧 TODO: Configura las credenciales de Azure (Service Principal o
-> Managed Identity) en tu pipeline de CI/CD antes de ejecutar en producción.
+> 🔧 TODO: Configure Azure credentials (Service Principal or Managed Identity)
+> in your CI/CD pipeline before running in production.
 
 ---
 
-## Tests Exploratorios — .NET Conf 2025
+## Exploratory Tests — .NET Conf 2025
 
-El archivo `tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` contiene
-la suite de pruebas exploratorias diseñadas específicamente para
+The file `tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` contains the
+exploratory test suite designed specifically for
 **[.NET Conf 2025](https://www.dotnetconf.net/)**.
 
-### Objetivo
+### Goal
 
-Verificar y explorar la funcionalidad del sitio y herramientas presentadas
-durante .NET Conf 2025, incluyendo navegación, carga de contenido y
-validación de elementos clave de la interfaz.
+Verify and explore the functionality of the site and tools presented during
+.NET Conf 2025, including navigation, content loading, and validation of key
+UI elements.
 
-### Convención Aplicada
+### Applied Convention
 
 ```
 DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts
 │              │       │
-│              │       └─ Resultado esperado: FUNCTIONALITY (funcionalidad verificada)
-│              └─────── Acción:  EXPLORE (exploración del sitio)
-└──────────────────── Escenario: DOTNETCONF2025
+│              │       └─ Expected result: FUNCTIONALITY (functionality verified)
+│              └─────── Action:  EXPLORE (site exploration)
+└──────────────────── Scenario: DOTNETCONF2025
 ```
 
-### Cómo Ejecutar Solo Este Test
+### How to Run Only This Test
 
 ```bash
-# Ejecución local
+# Local execution
 npx playwright test tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts
 
-# Ejecución en Azure Playwright Testing
+# Azure Playwright Testing execution
 export PLAYWRIGHT_SERVICE_URL="wss://westeurope.api.playwright.microsoft.com/accounts/<your-account-id>/browsers"
 npx playwright test tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts \
   --config=playwright.service.config.ts \
@@ -280,86 +279,85 @@ npx playwright test tests/DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts \
 
 ---
 
-## Suite de Tests Disponibles
+## Available Test Suite
 
-A continuación se describen todos los tests incluidos en el directorio `tests/`:
+The following tests are included in the `tests/` directory:
 
-| Archivo | Descripción |
+| File | Description |
 |---|---|
-| `MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts` | Verifica la carga de Microsoft.com, el título de la página y la visibilidad del logo. Captura screenshot completo. |
-| `DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` | Pruebas exploratorias dedicadas a .NET Conf 2025. |
-| `VerifyMovie.spec.ts` | Valida los detalles de la película *Deadpool & Wolverine* en la app de películas de demostración. Usa `matchAriaSnapshot`. |
-| `movie-ratings.spec.ts` | Verifica la calificación en estrellas de películas en la app de demostración. |
-| `movie-exploratory-test.spec.ts` | Test exploratorio sobre la aplicación de películas. |
-| `VerifyTodoApp.spec.ts` | Prueba el flujo básico de la aplicación TodoMVC (agregar y completar tareas). |
-| `demo-todo-app.spec.ts` | Suite completa de la aplicación TodoMVC con múltiples escenarios. |
-| `test-1.spec.ts` | Test básico de creación de elementos en TodoMVC. |
-| `test-2.spec.ts` | Test de integración contra aplicación local en `localhost:4200`. |
-| `w2m-exploratory-test.spec.ts` | Test exploratorio adicional. |
-| `fixedtest.spec.ts` | Test de calificaciones de películas con correcciones aplicadas. |
+| `MICROSOFTCOM__NAVIGATE__SUCCESS.spec.ts` | Verifies the loading of Microsoft.com, page title, and logo visibility. Captures a full-page screenshot. |
+| `DOTNETCONF2025__EXPLORE__FUNCTIONALITY.spec.ts` | Exploratory tests dedicated to .NET Conf 2025. |
+| `VerifyMovie.spec.ts` | Validates *Deadpool & Wolverine* details in the demo movies app using `matchAriaSnapshot`. |
+| `movie-ratings.spec.ts` | Verifies star ratings for movies in the demo app. |
+| `movie-exploratory-test.spec.ts` | Exploratory test for the movies application. |
+| `VerifyTodoApp.spec.ts` | Tests the basic flow of the TodoMVC application (add and complete tasks). |
+| `demo-todo-app.spec.ts` | Full TodoMVC test suite covering multiple scenarios. |
+| `test-1.spec.ts` | Basic item-creation test in TodoMVC. |
+| `test-2.spec.ts` | Integration test against a local app running on `localhost:4200`. |
+| `w2m-exploratory-test.spec.ts` | Additional exploratory test. |
+| `fixedtest.spec.ts` | Movie ratings test with applied fixes. |
 
 ---
 
-## Configuración
+## Configuration
 
-### Variables de Entorno
+### Environment Variables
 
-| Variable | Descripción | Ejemplo |
+| Variable | Description | Example |
 |---|---|---|
-| `PLAYWRIGHT_SERVICE_URL` | URL WebSocket del servicio Azure Playwright Testing | `wss://westeurope.api.playwright.microsoft.com/...` |
-| `CI` | Indica si se ejecuta en un entorno de integración continua | `true` |
+| `PLAYWRIGHT_SERVICE_URL` | WebSocket URL for Azure Playwright Testing | `wss://westeurope.api.playwright.microsoft.com/...` |
+| `CI` | Indicates whether the run is in a continuous integration environment | `true` |
 
-### Configuración Local (`playwright.config.ts`)
+### Local Configuration (`playwright.config.ts`)
 
-| Parámetro | Valor |
+| Parameter | Value |
 |---|---|
-| **Directorio de tests** | `./tests` |
-| **Ejecución paralela** | Habilitada (`fullyParallel: true`) |
-| **Reintentos en CI** | 2 reintentos |
-| **Workers en CI** | 1 (secuencial) |
+| **Tests directory** | `./tests` |
+| **Parallel execution** | Enabled (`fullyParallel: true`) |
+| **Retries in CI** | 2 retries |
+| **Workers in CI** | 1 (sequential) |
 | **Reporter** | `html` |
-| **Trazas** | `on-first-retry` |
-| **Navegadores** | Chromium, Firefox, WebKit (Desktop) |
+| **Traces** | `on-first-retry` |
+| **Browsers** | Chromium, Firefox, WebKit (Desktop) |
 
 ---
 
-## Tecnologías Utilizadas
+## Technologies
 
 - **[Microsoft Playwright](https://playwright.dev/)** `^1.54.1` —
-  Framework de automatización de pruebas E2E multiplataforma.
+  Cross-platform E2E test automation framework.
 - **[Azure Playwright Testing](https://aka.ms/mpt/docs)**
   `@azure/microsoft-playwright-testing ^1.0.0-beta.7` —
-  Servicio en la nube para ejecución paralela y reporte centralizado.
-- **[TypeScript](https://www.typescriptlang.org/)** con
-  `@types/node ^22.15.3` — Tipado estático para mayor robustez del código.
-- **[Node.js](https://nodejs.org/)** — Entorno de ejecución JavaScript.
+  Cloud service for parallel execution and centralised reporting.
+- **[TypeScript](https://www.typescriptlang.org/)** with
+  `@types/node ^22.15.3` — Static typing for more robust code.
+- **[Node.js](https://nodejs.org/)** — JavaScript runtime environment.
 
 ---
 
-## Contribución
+## Contributing
 
-1. Haz un fork del repositorio.
-2. Crea una rama para tu funcionalidad:
+1. Fork the repository.
+2. Create a branch for your feature:
 
    ```bash
-   git checkout -b feature/nueva-funcionalidad
+   git checkout -b feature/new-feature
    ```
 
-3. Realiza tus cambios y confirma los commits:
+3. Make your changes and commit:
 
    ```bash
-   git commit -m "feat: agrega nueva prueba exploratoria"
+   git commit -m "feat: add new exploratory test"
    ```
 
-4. Sube los cambios y abre un Pull Request:
+4. Push your changes and open a Pull Request:
 
    ```bash
-   git push origin feature/nueva-funcionalidad
+   git push origin feature/new-feature
    ```
 
 ---
 
-## Licencia
+## License
 
-Distribuido bajo la licencia **ISC**. Consulta el archivo `package.json`
-para más información.
+Distributed under the **ISC** license. See `package.json` for details.
